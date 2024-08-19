@@ -1,0 +1,75 @@
+<odoo>
+    <!-- Form View -->
+    <record id="view_portal_data_form" model="ir.ui.view">
+        <field name="name">portal.data.form</field>
+        <field name="model">portal.data</field>
+        <field name="arch" type="xml">
+            <form string="Portal Data">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="sale_dept"/>
+                        <field name="date"/>
+                        <field name="profile_name"/>
+                        <field name="client_user_id"/>
+                        <field name="client_name"/>
+                        <field name="order_num"/>
+                        <field name="order_link"/>
+                        <field name="remarks"/>
+                        <field name="assigned_team"/>
+                        <field name="order_status"/>
+                        <field name="service_lane"/>
+                        <field name="deli_by"/>
+                        <field name="deli_date"/>
+                        <field name="deli_amo"/>
+                        <field name="platform_stat"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_portal_data_tree" model="ir.ui.view">
+        <field name="name">portal.data.tree</field>
+        <field name="model">portal.data</field>
+        <field name="arch" type="xml">
+            <tree string="Portal Data">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="sale_dept"/>
+                <field name="date"/>
+                <field name="profile_name"/>
+                <field name="client_user_id"/>
+                <field name="client_name"/>
+                <field name="order_num"/>
+                <field name="order_link"/>
+                <field name="remarks"/>
+                <field name="assigned_team"/>
+                <field name="order_status"/>
+                <field name="service_lane"/>
+                <field name="deli_by"/>
+                <field name="deli_date"/>
+                <field name="deli_amo"/>
+                <field name="platform_stat"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_portal_data_root" name="Portal Data" sequence="10"/>
+
+    <menuitem id="menu_portal_data" name="Portal Data List" parent="menu_portal_data_root" sequence="1"/>
+
+    <!-- Action -->
+    <record id="action_portal_data" model="ir.actions.act_window">
+        <field name="name">Portal Data</field>
+        <field name="res_model">portal.data</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_portal_data_tree"/>
+    </record>
+
+    <!-- Add action to menu item -->
+    <menuitem id="menu_portal_data_list" name="Portal Data" parent="menu_portal_data" action="action_portal_data" sequence="2"/>
+</odoo>
